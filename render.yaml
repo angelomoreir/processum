@@ -2,7 +2,7 @@ services:
   - type: web
     name: processum
     runtime: node
-    plan: starter
+    plan: free
     buildCommand: npm install --include=dev && npm run build
     startCommand: node --experimental-sqlite server/index.js
     healthCheckPath: /api/health
@@ -11,11 +11,3 @@ services:
         generateValue: true
       - key: NODE_VERSION
         value: "22"
-      - key: DATA_DIR
-        value: /var/data
-      - key: UPLOADS_DIR
-        value: /var/data/uploads
-    disk:
-      name: processum-data
-      mountPath: /var/data
-      sizeGB: 1
