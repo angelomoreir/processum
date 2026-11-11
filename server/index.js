@@ -121,6 +121,7 @@ function seedPortal() {
   insert.run('1', '1', 'geral@empresaabc.pt', hash, now)
   insert.run('2', '2', 'joao.ferreira@email.pt', hash, now)
 }
+seedUsers()
 seedPortal()
 
 app.post('/api/auth/login', (req, res) => {
